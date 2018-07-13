@@ -1,0 +1,50 @@
+.targets {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.firstTarget {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  margin-top: 200px;
+  margin-left: 100px;
+}
+
+.secondTarget {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  margin-top: 200px;
+}
+
+.thirdTarget {
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  margin-top: 200px;
+}
+
+.fourthTarget {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  margin-top: 200px;
+}
+
+.fithTarget {
+  height: 100px;
+  width: 100px;
+  background-color: pink;
+  margin-top: 200px;
+}
+
+.sixthTarget {
+  height: 100px;
+  width: 100px;
+  background-color: orange;
+  margin-top: 200px;
+  margin-right: 100px;
+}
