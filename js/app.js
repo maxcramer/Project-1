@@ -82,6 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
     restartButton.addEventListener('click', function () {
       document.querySelector('#bullCount').innerHTML = playerBullets;
       document.querySelector('#score').innerHTML = playerScore;
+      document.querySelector('#timerScreen').innerHTML = timeRemaining;
       playerScore = 0;
       playerBullets = 3;
       timeRemaining = 30;
@@ -97,9 +98,9 @@ window.addEventListener('DOMContentLoaded', () => {
       // change this to be minusing points
     }
 
-    if (parseInt(bullCount)) {
-      clearInterval(playerBullets);
-      return window.alert('GAME OVER');
+    if (bullCount === 0) {
+      clearInterval(intervalId);
+      // isRunning = false;
     }
 
   });
@@ -123,7 +124,7 @@ window.addEventListener('DOMContentLoaded', () => {
     playerBullets --;
   }
 
-
+  // Logic for timer
   let timeRemaining = 30;
   let isRunning = false;
   let intervalId;
@@ -137,6 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#timerScreen').innerHTML = timeRemaining;
         if (timeRemaining === 0) {
           clearInterval(intervalId);
+          return window.alert('Game Over');
           // isRunning = false;
         }
       }, 1000);
