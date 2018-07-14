@@ -84,9 +84,10 @@ window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('#score').innerHTML = playerScore;
       playerScore = 0;
       playerBullets = 3;
+      timeRemaining = 30;
     });
 
-
+    // Logic for adding and minusing bullets whether it hits a target or misses
     if (event.target.classList.contains('target')) {
       bullCount.innerHTML = playerBullets;
       playerBullets += 1;
@@ -95,6 +96,12 @@ window.addEventListener('DOMContentLoaded', () => {
       playerBullets -= 1;
       // change this to be minusing points
     }
+
+    if (parseInt(bullCount)) {
+      clearInterval(playerBullets);
+      return window.alert('GAME OVER');
+    }
+
   });
 
 
@@ -117,6 +124,26 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  let timeRemaining = 30;
+  let isRunning = false;
+  let intervalId;
 
+  const startBtn = document.querySelector('.timer');
+  startBtn.addEventListener('click', function() {
+    if (!isRunning) {
+      isRunning = true;
+      intervalId = setInterval(() => {
+        timeRemaining -= 1;
+        document.querySelector('#timerScreen').innerHTML = timeRemaining;
+        if (timeRemaining === 0) {
+          clearInterval(intervalId);
+          // isRunning = false;
+        }
+      }, 1000);
+    } else {
+      clearInterval(intervalId);
+      isRunning = false;
+    }
+  });
 
 });

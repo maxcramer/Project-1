@@ -104,3 +104,35 @@
   font-size: 17.3px;
   float: right;
 }
+
+button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px black solid;
+  border-left: 3.2px black solid;
+  border-bottom: 3.2px black solid;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: red;
+}
+
+button:hover {
+  color: red;
+  background-color: black;
+  font-weight: 900;
+  font-size: 30px;
+  border: 1px red solid;
+  border-left: 3.2px red solid;
+  border-bottom: 3.2px red solid;
+  width: 150px;
+  height: 150px;
+}
+
+.timer {
+  border: 2px black solid;
+  width: 150px;
+  height: 170px;
+  font-family: sans-serif;
+  font-size: 17.3px;
+}
