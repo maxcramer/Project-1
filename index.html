@@ -6,15 +6,23 @@
     <script src="js/app.js"></script>
     <title></title>
   </head>
-  <h3>TARGETS</h3>
+  <img id="title" src="shoot-em-up.png" alt="Shoot-em-up-title">
   <body>
     <div class="targets">
-      <div class="firstTarget"></div>
-      <div class="secondTarget"></div>
-      <div class="thirdTarget"></div>
-      <div class="fourthTarget"></div>
-      <div class="fithTarget"></div>
-      <div class="sixthTarget"></div>
+      <div class="target firstTarget"></div>
+      <div class="target secondTarget"></div>
+      <div class="target thirdTarget"></div>
+      <div class="target fourthTarget"></div>
+      <div class="target fithTarget"></div>
+      <div class="target sixthTarget"></div>
     </div>
+    <div class="boards">
+      <div class="scoreboard">
+        Scoreboard <span id="score">0</span></div>
+      <div class="bullets">
+        bullets left <span id="bullCount">3</span>
+      </div>
+    </div>
+  <button id="restart">Restart</button>
   </body>
 </html>
