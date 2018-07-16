@@ -115,13 +115,22 @@ window.addEventListener('DOMContentLoaded', () => {
     playerScore ++;
   }
 
-
   // BULLET COUNT (WILL MINUS 1 EVERY TIME SHOOTING)
   let playerBullets = 3;
   const bullCount = document.querySelector('#bullCount');
   function updateBullCount() {
     bullCount.innerHTML = playerBullets;
     playerBullets --;
+
+    // attempted to turn above into if else statement, bellow
+    // was the code i was trying to get to make the bullCount
+    // stop at 0
+    //****************************************************
+    // else {
+    //   clearInterval(intervalId);
+    //   playerBullets = false;
+    //   window.alert('Game Over');
+    // }
   }
 
   // Logic for timer
