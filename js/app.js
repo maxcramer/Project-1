@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let playerScore = 0; // tried changing this to 0
   let playerBullets = 3;
+  const animation = ['runAcross', 'runAcross2'];
 
   // Logic for timer
   let timeRemaining = 30;
@@ -29,7 +30,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  targets.forEach(target => target.addEventListener('click', handleTargetClick));
+  targets.forEach(target => {
+    target.addEventListener('click', handleTargetClick);
+    target.style.animationName = `${generateRandomAnimation()}`;
+    target.style.animationDuration = `${Math.floor(Math.random()*10) + 5}s`;
+  });
 
   restartButton.addEventListener('click', function() {
     console.log('Restarting!');
@@ -93,5 +98,11 @@ window.addEventListener('DOMContentLoaded', () => {
       isRunning = false;
     }
   });
+
+ function generateRandomAnimation() {
+    const randomIndex = Math.floor(Math.random()*animation.length);
+    return animation[randomIndex];
+  }
+
 
 });

@@ -9,11 +9,18 @@
   margin-right: 100px;
 }
 
+.target {
+
+}
+
 .firstTarget {
   height: 100px;
   width: 100px;
   background-color: red;
   position: absolute;
+  animation-name: runAcross;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 .secondTarget {
@@ -21,6 +28,9 @@
   width: 100px;
   background-color: blue;
   position: absolute;
+  animation-name: runAcross;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 .thirdTarget {
@@ -28,14 +38,19 @@
   width: 100px;
   background-color: green;
   position: absolute;
+  animation-name: runAcross;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 .fourthTarget {
   height: 100px;
   width: 100px;
   background-color: yellow;
-  animation: targetMoves 2s infinate;
   position: absolute;
+  animation-name: runAcross;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 .fithTarget {
@@ -43,6 +58,9 @@
   width: 100px;
   background-color: pink;
   position: absolute;
+  animation-name: runAcross;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 .sixthTarget {
@@ -50,25 +68,62 @@
   width: 100px;
   background-color: orange;
   position: absolute;
-  animation: runAcross 10s infinate;
+  left: 0%;
+  animation-name: runAcross;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes runAcross {
   0% {
-    top: 0%;
     left: 0%;
   }
   25% {
-    left: 35%;
-  }
-  50% {
     left: 50%;
   }
+  50% {
+    left: 100%;
+  }
   75% {
-    left: 75%;
+    left: 50%;
   }
   100% {
+    left: 0%;
+  }
+}
+
+@keyframes runAcross2 {
+  0% {
+    left: 0%;
+  }
+  25% {
+    left: 45%;
+  }
+  50% {
     left: 100%;
+  }
+  75% {
+    left: 60%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes runAcross3 {
+  0% {
+    right: 0%;
+  }
+  25% {
+    right: 45%;
+  }
+  50% {
+    right: 100%;
+  }
+  75% {
+    right: 60%;
+  }
+  100% {
+    right: 0%;
   }
 }
 
