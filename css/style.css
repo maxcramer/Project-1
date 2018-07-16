@@ -5,6 +5,8 @@
   align-items: center;
   background-color: grey;
   padding: 100px 0;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .firstTarget {
@@ -147,9 +149,11 @@ body {
 #grandking {
   height:150px;
   width: 120px;
-  margin-left: 600px;
 }
 
 .shooter {
-  background-color: goldenRod;
+  background-color: lightgrey;
+  height: 150px;
+  margin-left: 100px;
+  margin-right: 100px;
 }

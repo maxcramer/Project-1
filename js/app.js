@@ -1,126 +1,138 @@
 window.addEventListener('DOMContentLoaded', () => {
   // FOURTH ATTEMPT - TARGETS DISSAPEAR ON CLICK THEN REAPEAR AFTER 2.5 SECONDS
   // TARGETS NOT MOVING OUT OUF SPACE
-  const firstTarget = document.querySelector('.firstTarget');
-  firstTarget.addEventListener('click', function () {
-    firstTarget.style.visibility = 'hidden';
-    updateScore();
-    updateBullCount();
-    setTimeout(() => {
-      firstTarget.style.visibility = 'visible';
-    },1000);
-  });
-
-
-
-
-  const secondTarget = document.querySelector('.secondTarget');
-  secondTarget.addEventListener('click', function () {
-    secondTarget.style.visibility = 'hidden';
-    updateScore();
-    updateBullCount();
-    setTimeout(() => {
-      secondTarget.style.visibility = 'visible';
-    },1000);
-  });
-
-
-
-  const thirdTarget = document.querySelector('.thirdTarget');
-  thirdTarget.addEventListener('click', function () {
-    thirdTarget.style.visibility = 'hidden';
-    updateScore();
-    updateBullCount();
-    setTimeout(() => {
-      thirdTarget.style.visibility = 'visible';
-    },1000);
-  });
-
-
-
-  const fourthTarget = document.querySelector('.fourthTarget');
-  fourthTarget.addEventListener('click', function () {
-    fourthTarget.style.visibility = 'hidden';
-    updateScore();
-    updateBullCount();
-    setTimeout(() => {
-      fourthTarget.style.visibility = 'visible';
-    },1000);
-  });
-
-
-
-  const fithTarget = document.querySelector('.fithTarget');
-  fithTarget.addEventListener('click', function () {
-    fithTarget.style.visibility = 'hidden';
-    updateScore();
-    updateBullCount();
-    setTimeout(() => {
-      fithTarget.style.visibility = 'visible';
-    },1000);
-  });
-
-
-
-  const sixthTarget = document.querySelector('.sixthTarget');
-  sixthTarget.addEventListener('click', function () {
-    sixthTarget.style.visibility = 'hidden';
-    updateScore();
-    updateBullCount();
-    setTimeout(() => {
-      sixthTarget.style.visibility = 'visible';
-    },1000);
-  });
-
-  const playArea = document.querySelector('.targets');
+  const playArea = document.querySelector('.playArea');
   playArea.addEventListener('click', function () {
-    console.log(event.target);
-
-    // Logic for restart button
-    const restartButton = document.querySelector('#restart');
-    console.log(restartButton);
-    restartButton.addEventListener('click', function () {
-      document.querySelector('#bullCount').innerHTML = playerBullets;
-      document.querySelector('#score').innerHTML = playerScore;
-      document.querySelector('#timerScreen').innerHTML = timeRemaining;
-      playerScore = 0;
-      playerBullets = 3;
-      timeRemaining = 30;
-    });
-
-    // Logic for adding and minusing bullets whether it hits a target or misses
-    if (event.target.classList.contains('target')) {
-      bullCount.innerHTML = playerBullets;
-      playerBullets += 1;
-    } else {
-      bullCount.innerHTML = playerBullets;
-      playerBullets -= 1;
-      // change this to be minusing points
-    }
-
-    if (bullCount === 0) {
-      clearInterval(intervalId);
-      // isRunning = false;
-    }
-
+    playArea.style.visibility = 'hidden';
+    updateScore();
+    updateBullCount();
+    setTimeout(() => {
+      playArea.style.visibility = 'visible';
+    },1000);
   });
 
+
+  const targets = document.querySelectorAll('.target');
+  targets.forEach(target => target.addEventListener('click', function () {
+    target.style.visibility = 'hidden';
+    setTimeout(() => {
+      target.style.visibility = 'visible';
+    },1000);
+  })
+  );
+
+
+
+
+
+  // const secondTarget = document.querySelector('.secondTarget');
+  // secondTarget.addEventListener('click', function () {
+  //   secondTarget.style.visibility = 'hidden';
+  //   updateScore();
+  //   updateBullCount();
+  //   setTimeout(() => {
+  //     secondTarget.style.visibility = 'visible';
+  //   },1000);
+  // });
+  //
+  //
+  //
+  // const thirdTarget = document.querySelector('.thirdTarget');
+  // thirdTarget.addEventListener('click', function () {
+  //   thirdTarget.style.visibility = 'hidden';
+  //   updateScore();
+  //   updateBullCount();
+  //   setTimeout(() => {
+  //     thirdTarget.style.visibility = 'visible';
+  //   },1000);
+  // });
+  //
+  //
+  //
+  // const fourthTarget = document.querySelector('.fourthTarget');
+  // fourthTarget.addEventListener('click', function () {
+  //   fourthTarget.style.visibility = 'hidden';
+  //   updateScore();
+  //   updateBullCount();
+  //   setTimeout(() => {
+  //     fourthTarget.style.visibility = 'visible';
+  //   },1000);
+  // });
+  //
+  //
+  //
+  // const fithTarget = document.querySelector('.fithTarget');
+  // // We are hooking this function to the click event.
+  // // This only needs to be hooked on once!
+  // fithTarget.addEventListener('click', function () {
+  //   fithTarget.style.visibility = 'hidden';
+  //   updateScore();
+  //   updateBullCount();
+  //   setTimeout(() => {
+  //     fithTarget.style.visibility = 'visible';
+  //   },1000);
+  // });
+  //
+  //
+  //
+  // const sixthTarget = document.querySelector('.sixthTarget');
+  // sixthTarget.addEventListener('click', function () {
+  //   sixthTarget.style.visibility = 'hidden';
+  //   updateScore();
+  //   updateBullCount();
+  //   setTimeout(() => {
+  //     sixthTarget.style.visibility = 'visible';
+  //   },1000);
+  // });
+
+  playArea.addEventListener('click', updateBullCount);
+  // Logic for restart button
+  // This should be outside the click event listener (line 74)
+
+
+  const restartButton = document.querySelector('#restart');
+  restartButton.addEventListener('click', function () {
+    document.querySelector('#bullCount').innerHTML = playerBullets;
+    document.querySelector('#score').innerHTML = playerScore;
+    document.querySelector('#timerScreen').innerHTML = timeRemaining;
+    playerScore = 0;
+    playerBullets = 3;
+    timeRemaining = 30;
+  });
 
 
   // SCOREBOARD LOGIC
-  let playerScore = 1;
+  let playerScore = 1; // tried changing this to 0
   const score = document.querySelector('#score');
   function updateScore() {
     score.innerHTML = playerScore;
-    playerScore ++;
+    playerScore ++; // tried taking these out
   }
 
-  // BULLET COUNT (WILL MINUS 1 EVERY TIME SHOOTING)
   let playerBullets = 3;
   const bullCount = document.querySelector('#bullCount');
   function updateBullCount() {
-    bullCount.innerHTML = playerBullets;
-    playerBullets --;
+    // ROB: Put all bullet logic here
+    // ROB: Set the value of playerBullets then display it
+    // ROB: Include this logic in updateBulletCount
+    // Logic for adding and minusing bullets whether it hits a target or misses
+    if (event.target.classList.contains('target')) {
+      console.log('HIT!');
+      bullCount.innerHTML = playerBullets;
+      playerBullets += 0;
+    } else {
+      console.log('MISS!');
+      playerBullets -= 1;
+      bullCount.innerHTML = playerBullets;
+      // change this to be minusing points
+      if (playerBullets === 0) {
+        console.log('GAME OVER!');
+        clearInterval(intervalId);
+        // can't get it to stop at 0
+        playArea.removeEventListener('click', updateBullCount);
+      }
+    }
+
 
     // attempted to turn above into if else statement, bellow
     // was the code i was trying to get to make the bullCount
