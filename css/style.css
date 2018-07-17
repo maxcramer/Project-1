@@ -3,75 +3,31 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  background-color: grey;
-  padding: 100px 0;
-  margin-left: 100px;
-  margin-right: 100px;
+  border-bottom: 5px white solid;
+  margin: auto;
+  width: 100%;
 }
 
-.target {
-
+body {
+  background-color: #93d6e6;
 }
 
-.firstTarget {
-  height: 100px;
-  width: 100px;
-  background-color: red;
+.targetImage {
+  height: 250px;
+}
+
+#busStop {
+  height: 680px;
+  width: 100%;
+}
+
+.targetDiv {
+  animation-timing-function: linear;
   position: absolute;
   animation-name: runAcross;
   animation-duration: 3s;
   animation-iteration-count: infinite;
-}
-
-.secondTarget {
-  height: 100px;
-  width: 100px;
-  background-color: blue;
-  position: absolute;
-  animation-name: runAcross;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-.thirdTarget {
-  height: 100px;
-  width: 100px;
-  background-color: green;
-  position: absolute;
-  animation-name: runAcross;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-.fourthTarget {
-  height: 100px;
-  width: 100px;
-  background-color: yellow;
-  position: absolute;
-  animation-name: runAcross;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-.fithTarget {
-  height: 100px;
-  width: 100px;
-  background-color: pink;
-  position: absolute;
-  animation-name: runAcross;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-.sixthTarget {
-  height: 100px;
-  width: 100px;
-  background-color: orange;
-  position: absolute;
-  left: 0%;
-  animation-name: runAcross;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  margin-top: 100px;
 }
 
 @keyframes runAcross {
@@ -126,6 +82,108 @@
     right: 0%;
   }
 }
+@keyframes runAcross4 {
+  0% {
+    right: 0%;
+  }
+  25% {
+    right: 35%;
+  }
+  50% {
+    right: 100%;
+  }
+  75% {
+    right: 54%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+@keyframes runAcross5 {
+  0% {
+    left: 0%;
+  }
+  25% {
+    left: 22%;
+  }
+  50% {
+    left: 100%;
+  }
+  75% {
+    left: 85%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes runAcross6 {
+  0% {
+    right: 0%;
+  }
+  25% {
+    right: 67%;
+  }
+  50% {
+    right: 100%;
+  }
+  75% {
+    right: 80%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+@keyframes runAcross7 {
+  0% {
+    left: 0%;
+  }
+  25% {
+    left: 28%;
+  }
+  50% {
+    left: 100%;
+  }
+  75% {
+    left: 43%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes runAcross8 {
+  0% {
+    right: 0%;
+  }
+  25% {
+    right: 15%;
+  }
+  50% {
+    right: 84%;
+  }
+  75% {
+    right: 60%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+@keyframes runAcross9 {
+  0% {
+    left: 0%;
+  }
+  25% {
+    left: 39%;
+  }
+  50% {
+    left: 100%;
+  }
+  75% {
+    left: 88%;
+  }
+  100% {
+    left: 0%;
+  }
+}
 
 #title {
   height: 370px;
@@ -152,27 +210,19 @@
 }
 
 button {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 1px black solid;
-  border-left: 3.2px black solid;
-  border-bottom: 3.2px black solid;
-  font-family: sans-serif;
-  font-size: 20px;
-  background-color: red;
+
+}
+
+#kyleBtn {
+  height: 70px;
+  width: 75px;
+  padding-bottom: 20px;
+  background-color: #93d6e6;
+  border: none;
 }
 
 button:hover {
-  color: red;
-  background-color: black;
-  font-weight: 900;
-  font-size: 30px;
-  border: 1px red solid;
-  border-left: 3.2px red solid;
-  border-bottom: 3.2px red solid;
-  width: 150px;
-  height: 150px;
+  background-image: url('buttons/kyleBtnSpeak.png');
 }
 
 .timer {
@@ -191,13 +241,13 @@ body {
 #grandking {
   height:150px;
   width: 120px;
+  position: absolute;
 }
 
 .shooter {
-  background-color: lightgrey;
+  background-color: #49434d;
   height: 150px;
-  margin-left: 100px;
-  margin-right: 100px;
+  position: relative;
 }
 
 #timerScreen {
@@ -219,4 +269,11 @@ body {
   background-color: black;
   color: red;
   font-size: 50px;
+}
+
+.facts {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }

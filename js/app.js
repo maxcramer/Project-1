@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   const playArea = document.querySelector('.playArea');
-  const targets = document.querySelectorAll('.target');
   const score = document.querySelector('#score');
   const restartButton = document.querySelector('#restart');
   const bullCount = document.querySelector('#bullCount');
@@ -10,14 +9,48 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let playerScore = 0; // tried changing this to 0
   let playerBullets = 3;
-  const animation = ['runAcross', 'runAcross2'];
+  const animation = ['runAcross', 'runAcross2', 'runAcross3', 'runAcross4', 'runAcross5', 'runAcross6', 'runAcross7', 'runAcross8', 'runAcross9'];
 
   // Logic for timer
   let timeRemaining = 30;
   let isRunning = false;
   let intervalId;
 
-  playArea.addEventListener('click', updateBullCount);
+  const playing = document.querySelector('.playArea');
+
+  const grandking = document.querySelector('#grandking');
+
+  playing.addEventListener('mousemove', (event) => {
+    grandking.style.left = event.clientX + 'px';
+  });
+
+
+  function addTargetsToPlayArea(targets) {
+    for(let i = 0; i < targets.length; i++) {
+      const target = targets[i];
+      const targetDiv = document.createElement('div');
+      const targetImage = document.createElement('img');
+      targetImage.setAttribute('src', target.imageSrc);
+      targetImage.classList = 'targetImage';
+      targetDiv.classList = `targetDiv ${target.className}`;
+      targetDiv.append(targetImage);
+      document.getElementById('playArea').append(targetDiv);
+    }
+  }
+
+  const level1Targets = [
+    {className: 'firstTarget', imageSrc: './Characters/billc.png'},
+    {className: 'secondTarget', imageSrc: './Characters/caytlinj.png'},
+    {className: 'thirdTarget', imageSrc: './Characters/hillary.png'},
+    {className: 'fourthTarget', imageSrc: './Characters/manBearPig.png'},
+    {className: 'fifthTarget', imageSrc: './Characters/mrslave.png'},
+    {className: 'sixthTarget', imageSrc: './Characters/trump.png'}
+  ];
+
+  addTargetsToPlayArea(level1Targets);
+  const targets = document.querySelectorAll('.targetDiv');
+
+  playArea.addEventListener('click', handlePlayAreaClick);
 
   // Target onClick addEventListener
   const handleTargetClick = function(event) {
@@ -59,9 +92,11 @@ window.addEventListener('DOMContentLoaded', () => {
     bullCount.innerHTML = playerBullets;
   }
 
-  function updateBullCount() {
+  function handlePlayAreaClick(event) {
+    console.log('Is running?', isRunning);
     if(isRunning) {
-      if (event.target.classList.contains('target')) {
+      console.log('What is the target class?', event.target.classList);
+      if (event.target.classList.contains('targetImage')) {
         console.log('HIT!');
         increaseScore();
         bullCount.innerHTML = playerBullets;
@@ -99,7 +134,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
- function generateRandomAnimation() {
+  function generateRandomAnimation() {
     const randomIndex = Math.floor(Math.random()*animation.length);
     return animation[randomIndex];
   }
