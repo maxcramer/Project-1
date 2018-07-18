@@ -81,6 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
     bullCount.innerHTML = playerBullets;
     score.innerHTML = playerScore;
     timerDisplay.innerHTML = timeRemaining;
+    return('startBtn');
     // TODO: Update the DOM to reflect timeRemaining!
   });
 
