@@ -16,6 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
   let isRunning = false;
   let intervalId;
 
+
+  // For character movement in relation to mouse
   const playing = document.querySelector('.playArea');
 
   const grandking = document.querySelector('#grandking');
@@ -24,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     grandking.style.left = event.clientX + 'px';
   });
 
-
+  // Adds targets to playArea
   function addTargetsToPlayArea(targets) {
     for(let i = 0; i < targets.length; i++) {
       const target = targets[i];
@@ -69,6 +71,8 @@ window.addEventListener('DOMContentLoaded', () => {
     target.style.animationDuration = `${Math.floor(Math.random()*10) + 5}s`;
   });
 
+
+  // RESTART BUTTON
   restartButton.addEventListener('click', function() {
     console.log('Restarting!');
     playerBullets = 3;
@@ -91,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
   function displayBulletCount() {
     bullCount.innerHTML = playerBullets;
   }
-
+  // Player bullet count
   function handlePlayAreaClick(event) {
     console.log('Is running?', isRunning);
     if(isRunning) {
@@ -115,7 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
+  // START BUTTON & TIMER
   startBtn.addEventListener('click', function() {
     if (!isRunning) {
       isRunning = true;
@@ -134,6 +138,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+  // GENERATES RANDOM PATH & SPEED (LOOKS AT KEYFRAMES IN ARRAY)
   function generateRandomAnimation() {
     const randomIndex = Math.floor(Math.random()*animation.length);
     return animation[randomIndex];
