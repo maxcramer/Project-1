@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let playerScore = 0; // tried changing this to 0
   let playerBullets = 3;
   const animation = ['runAcross', 'runAcross2', 'runAcross3', 'runAcross4', 'runAcross5', 'runAcross6', 'runAcross7', 'runAcross8', 'runAcross9'];
-  let title = document.querySelector('#title');
+  const title = document.querySelector('#title');
   // Logic for timer
   let timeRemaining = 30;
   let isRunning = false;
@@ -59,6 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if(isRunning) {
       const target = event.target;
       target.style.visibility = 'hidden';
+      startBtn.style.visibility = 'hidden';
       setTimeout(() => {
         target.style.visibility = 'visible';
       },1000);
@@ -82,6 +83,8 @@ window.addEventListener('DOMContentLoaded', () => {
     score.innerHTML = playerScore;
     timerDisplay.innerHTML = timeRemaining;
     // TODO: Update the DOM to reflect timeRemaining!
+
+    startTimer();
   });
 
 
@@ -119,45 +122,29 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function startTimer() {
+    if (!isRunning) {
+      isRunning = true;
+      title.style.visibility = 'hidden';
+      startBtn.style.display = 'none';
+      restartButton.style.display = 'block';
+      intervalId = setInterval(() => {
+        timeRemaining -= 1;
+        document.querySelector('#timerScreen').innerHTML = timeRemaining;
+        if (timeRemaining === 0) {
+          clearInterval(intervalId);
+          isRunning = false;
+          return window.alert('Game Over');
+        }
+      }, 1000);
+    } else {
+      clearInterval(intervalId);
+      isRunning = false;
+    }
+  }
+
   // START BUTTON & TIMER
-  startBtn.addEventListener('click', function() {
-    if (!isRunning) {
-      isRunning = true;
-      title.style.visibility = 'hidden';
-      startBtn.style.visibility = 'hidden';
-      intervalId = setInterval(() => {
-        timeRemaining -= 1;
-        document.querySelector('#timerScreen').innerHTML = timeRemaining;
-        if (timeRemaining === 0) {
-          clearInterval(intervalId);
-          return window.alert('Game Over');
-          // isRunning = false;
-        }
-      }, 1000);
-    } else {
-      clearInterval(intervalId);
-      isRunning = false;
-    }
-  });
-  restartButton.addEventListener('click', function() {
-    if (!isRunning) {
-      isRunning = true;
-      title.style.visibility = 'hidden';
-      startBtn.style.visibility = 'hidden';
-      intervalId = setInterval(() => {
-        timeRemaining -= 1;
-        document.querySelector('#timerScreen').innerHTML = timeRemaining;
-        if (timeRemaining === 0) {
-          clearInterval(intervalId);
-          return window.alert('Game Over');
-          // isRunning = false;
-        }
-      }, 1000);
-    } else {
-      clearInterval(intervalId);
-      isRunning = false;
-    }
-  });
+  startBtn.addEventListener('click', startTimer);
 
 
   // GENERATES RANDOM PATH & SPEED (LOOKS AT KEYFRAMES IN ARRAY)
