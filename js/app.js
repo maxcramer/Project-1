@@ -81,7 +81,6 @@ window.addEventListener('DOMContentLoaded', () => {
     bullCount.innerHTML = playerBullets;
     score.innerHTML = playerScore;
     timerDisplay.innerHTML = timeRemaining;
-    return('startBtn');
     // TODO: Update the DOM to reflect timeRemaining!
   });
 
@@ -122,6 +121,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // START BUTTON & TIMER
   startBtn.addEventListener('click', function() {
+    if (!isRunning) {
+      isRunning = true;
+      title.style.visibility = 'hidden';
+      startBtn.style.visibility = 'hidden';
+      intervalId = setInterval(() => {
+        timeRemaining -= 1;
+        document.querySelector('#timerScreen').innerHTML = timeRemaining;
+        if (timeRemaining === 0) {
+          clearInterval(intervalId);
+          return window.alert('Game Over');
+          // isRunning = false;
+        }
+      }, 1000);
+    } else {
+      clearInterval(intervalId);
+      isRunning = false;
+    }
+  });
+  restartButton.addEventListener('click', function() {
     if (!isRunning) {
       isRunning = true;
       title.style.visibility = 'hidden';
