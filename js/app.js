@@ -4,13 +4,13 @@ window.addEventListener('DOMContentLoaded', () => {
   const score = document.querySelector('#score');
   const restartButton = document.querySelector('#restart');
   const bullCount = document.querySelector('#bullCount');
-  const startBtn = document.querySelector('.timer');
+  const startBtn = document.querySelector('.startBtn');
   const timerDisplay = document.querySelector('#timerScreen');
 
   let playerScore = 0; // tried changing this to 0
   let playerBullets = 3;
   const animation = ['runAcross', 'runAcross2', 'runAcross3', 'runAcross4', 'runAcross5', 'runAcross6', 'runAcross7', 'runAcross8', 'runAcross9'];
-
+  let title = document.querySelector('#title');
   // Logic for timer
   let timeRemaining = 30;
   let isRunning = false;
@@ -123,6 +123,8 @@ window.addEventListener('DOMContentLoaded', () => {
   startBtn.addEventListener('click', function() {
     if (!isRunning) {
       isRunning = true;
+      title.style.visibility = 'hidden';
+      startBtn.style.visibility = 'hidden';
       intervalId = setInterval(() => {
         timeRemaining -= 1;
         document.querySelector('#timerScreen').innerHTML = timeRemaining;

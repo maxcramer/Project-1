@@ -186,10 +186,11 @@ body {
 }
 
 #title {
-  height: 370px;
-  width: 500px;
-  margin-left: 480px;
-  background-image:'Bus-stop.jpg';
+  position: absolute;
+  background-color: #93d6e6;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .scoreboard {
@@ -226,6 +227,10 @@ body {
   margin-bottom: -10px;
 }
 
+.startBtn {
+  z-index: 2;
+}
+
 body {
   background-image: image('Bus-stop.jp');
   cursor: url(target_PNG17.png);
@@ -245,28 +250,20 @@ body {
 
 #timerScreen {
   font-size: 30px;
-  border: 2px white solid;
-
+  /* border: 2px white solid;
+  height: 100%; */
 }
 
 #score {
   font-size: 30px;
-  border: 2px white solid;
-
+  /* border: 2px white solid;
+  height: 100%; */
 }
 
 #bullCount {
   font-size: 30px;
-  border: 2px white solid;
-
-}
-
-.facts {
-  display: flex;
-  position: absolute;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
+  /* border-left: 2px white solid;
+  border-right: 2px white solid; */
 }
 
 .buttonDiv {
@@ -277,7 +274,7 @@ body {
   padding-left: 1100px;
 }
 
-.timer {
+.facts {
   font-family: sans-serif;
   font-size: 25px;
   color: white;
@@ -285,7 +282,11 @@ body {
   flex-direction: column;
   position: absolute;
   justify-content: space-between;
+  width: 41%;
 }
+
+
+
 
 .stylingButtons {
   display: flex;
@@ -299,12 +300,13 @@ body {
   display: flex;
   position: static;
   justify-content: space-around;
-
   flex-direction: row;
   width: 100%;
   height: 100%;
   float: right;
   border-bottom: 2px white solid;
+  border-right: 2px white solid;
+  border-top: 2px white solid;
   background-color: #93d6e6;
 
 
