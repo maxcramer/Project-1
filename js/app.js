@@ -102,7 +102,6 @@ window.addEventListener('DOMContentLoaded', () => {
   function increaseScore() {
     playerScore ++;
     score.innerHTML = playerScore;
-    scoreFinal.innerHTML = playerScore;
     isRunning = true;
   }
 
@@ -134,7 +133,7 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log('Is running?', isRunning);
     if(isRunning) {
       document.querySelector('.playArea').classList.add('shoot-cursor');
-      setTimeout(() => document.querySelector('.playArea').classList.remove('shoot-cursor'), 150)
+      setTimeout(() => document.querySelector('.playArea').classList.remove('shoot-cursor'), 150);
       console.log('What is the target class?', event.target.classList);
       if (event.target.classList.contains('targetImage')) {
         console.log('----->', event.target);
@@ -161,13 +160,11 @@ window.addEventListener('DOMContentLoaded', () => {
     timeRemaining = 30;
     playerBullets = 3;
     backgroundTrackAudio.src = '';
+    scoreFinal.innerHTML = playerScore;
     displayGameOver();
   }
 
   function startTimer() {
-    console.log('this is isrunning at start timer ->', isRunning);
-    //PLAY AUDIO FOR BACKING TRACK
-    // TODO: SHOULDN'T PLAY TWICE
     if (!backgroundTrackAudio) {
       backgroundTrackAudio = new Audio('./Sounds/backingTrack.mp3');
       backgroundTrackAudio.volume = 0.4;
