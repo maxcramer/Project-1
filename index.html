@@ -7,7 +7,8 @@
     <title></title>
   </head>
   <body>
-  <img id="title" src="banner.png" alt="banner">
+
+  <img id="title" src="images/banner.png" alt="banner">
   <div class="facts">
     <div class="logging">
       <div class="timer">
@@ -15,6 +16,15 @@
       </div>
       <div class="scoreboard">
         Scoreboard <span id="score">0</span>
+          <div class="gameOverDisplay">
+            <p>GAME OVER</p>
+            <img id="deadCharacter" src="./images/deadCharacter.png" alt="skull">
+            <hr>
+            <p>You have scored</p>
+              <span id="scoreFinal">0</span>
+            <hr>
+            <p>Please click on Kyle to play again!</p>
+          </div>
       </div>
       <div class="bullets">
         bullets left <span id="bullCount">3</span>
@@ -30,7 +40,7 @@
     </div>
   </div>
   <div class="playArea" id="playArea">
-    <img id="busStop" src="Bus-stop.jpg" alt="busStop">
+    <img id="busStop" src="images/Bus-stop.jpg" alt="busStop">
   </div>
   <div class="shooter">
     <img id="grandking" src="./Characters/grandking.png" alt="grandking">
