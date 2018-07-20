@@ -35,4 +35,4 @@ Write about the process here
 
 ### Wireframe
 
-![Wireframe](.//screenshots/mvp.png)
+![Wireframe](.//screenshots/minimal.png)
