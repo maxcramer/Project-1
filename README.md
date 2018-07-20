@@ -1,2 +1,2 @@
 # Project-1
-./images/banner.png
+![alt text](http://images/banner.png)
