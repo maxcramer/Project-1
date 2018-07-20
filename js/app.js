@@ -197,6 +197,4 @@ window.addEventListener('DOMContentLoaded', () => {
     const randomIndex = Math.floor(Math.random()*animation.length);
     return animation[randomIndex];
   }
-
-
 });
