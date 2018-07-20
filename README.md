@@ -54,7 +54,7 @@ My other big win was getting the "targets" (div) to disappear for one second onl
 ### Future Features
 
 #### Mobile responsive:
-- Had I had move time, I would of made the game work on mobile. I would have done this by adding functions that listen to "clicks" from the finger rather than a mouse. This would of allowed the game to be played on mobile & make the game portable.![Mobile Adapt](./screenshots/mobile.png)
+- Had I had move time, I would of made the game work on mobile. I would have done this by adding functions that listen to "clicks" from the finger rather than a mouse. This would of allowed the game to be played on mobile & make the game portable.![Mobile-Adapt](./screenshots/mobile.png)
 
 #### Leaderboard:
 - Another aspect I had previously hoped to add would of been a leaderboard and the ability to log your score on a local repository after the game has ended. Unfortunately I had run out of time before I had the opportunity to create a leaderboard.
