@@ -1,2 +1,2 @@
 # Project-1
-banner.png
+/images/banner.png
