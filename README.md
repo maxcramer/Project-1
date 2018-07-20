@@ -7,27 +7,27 @@
 
 ### INSTRUCTIONS
 
-*Click on Stan’s face on the right to begin
+* Click on Stan’s face on the right to begin
 
-*Move the mouse over the moving characters to aim
+* Move the mouse over the moving characters to aim
 
-*To restart the game when the timer or the bullets run out, click on Kyle’s face to restart
+* To restart the game when the timer or the bullets run out, click on Kyle’s face to restart
 
 ### Technology Used During Build
 
-*HTML5
+* HTML5
 
-*HTMLAudio
+* HTMLAudio
 
-*Animation
+* Animation
 
-*CSS
+* CSS
 
-*JavaScript
+* JavaScript
 
-*Git
+* Git
 
-*GitHub
+* GitHub
 
 ![Home Screen](.//screenshots/home.png)
 ![In Play](.//screenshots/inGame.png)
