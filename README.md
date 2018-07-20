@@ -8,7 +8,7 @@
 ### INSTRUCTIONS
 
 * Click on Stan’s face on the right to begin
-* Move the mouse over the moving characters to aim
+* Move the mouse over the moving characters to aim & click the mouse to shoot
 * To restart the game when the timer or the bullets run out, click on Kyle’s face to restart
 
 ### Technology Used During Build
@@ -21,6 +21,9 @@
 * Git
 * GitHub
 
+#### Home Page
 ![Home Screen](.//screenshots/home.png)
+#### During Game Play
 ![In Play](.//screenshots/inGame.png)
+#### Game Over Screen
 ![Game Over](.//screenshots/gameOver.png)
