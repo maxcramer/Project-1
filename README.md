@@ -5,7 +5,7 @@
 
 - [Click here to play South Park's Trump Shootout game](https://maxcramer.github.io/Project-1/)
 
-### INSTRUCTIONS
+### Instructions
 
 * Click on Stan’s face on the right to begin
 * Move the mouse over the moving characters to aim & click the mouse to shoot
@@ -27,3 +27,12 @@
 ![In Play](.//screenshots/inGame.png)
 #### Game Over Screen
 ![Game Over](.//screenshots/gameOver.png)
+
+### Process
+
+Write about the process here
+
+
+### Wireframe
+
+![Wireframe](.//screenshots/mvp.png)
