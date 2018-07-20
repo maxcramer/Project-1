@@ -1,2 +1,2 @@
 # Project-1
-![alt text](http://images/banner.png)
+![banner](http://images/banner.png)
