@@ -1,31 +1,33 @@
 # Project-1
 ![banner](.//images/banner.png)
 
-GENERAL ASSEMBLY Project 1: A simple, single page, front end game.
+## GENERAL ASSEMBLY Project 1: A simple, single page, front end game.
 
 - [Click here to play South Park's Trump Shootout game](https://maxcramer.github.io/Project-1/)
 
-INSTRUCTIONS
-• 	Click on Stan’s face on the right to begin
+### INSTRUCTIONS
 
-• 	Move the mouse over the moving characters to aim
+*Click on Stan’s face on the right to begin
 
-• 	To restart the game when the timer or the bullets run out, click on Kyle’s face to restart
+*Move the mouse over the moving characters to aim
 
-Technology Used During Build
-• 	HTML5
+*To restart the game when the timer or the bullets run out, click on Kyle’s face to restart
 
-• 	HTMLAudio
+### Technology Used During Build
 
-• 	Animation
+*HTML5
 
-• 	CSS
+*HTMLAudio
 
-• 	JavaScript
+*Animation
 
-• 	Git
+*CSS
 
-• 	GitHub
+*JavaScript
+
+*Git
+
+*GitHub
 
 ![Home Screen](.//screenshots/home.png)
 ![In Play](.//screenshots/inGame.png)
