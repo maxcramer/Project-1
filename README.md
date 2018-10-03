@@ -41,15 +41,15 @@ I started designing with pen & paper, to get the basic design and functionality 
 I decided to first of all make a very basic wireframe that makes the "targets" disappear for one second then reappear. Each click on a target would add 1 point and no bullets would be taken away. Should a click land outside of the target, no points were added and one bullet was taken away until reaching 0 when the game would be over.
 ![Wireframe](./screenshots/minimal.jpg)
 
-### Wins
-My biggest wins with this were learning how to animate each "target" (div) to move around the page independently and randomly, choosing from a number of different "keyframes " and also generating a random duration to move across the screen.
-
-My other big win was getting the "targets" (div) to disappear for one second only, then reappearing on the screen. This gave me the ability to make it appear as if once the "targets" (divs) are "shot" or hit they disappear like at the old fashioned carnival "duck shooting" games.
-
 ### Blockers & Bugs
 - One of my biggest blockers was getting both the timer & the bullet count to stop at 0. I was able to overcome this by using "clearinterval(intervalId)" but I did learn a lot while doing this. After creating this stop it also gave me the opportunity to link the buttons  such as the start & restart to ensure that the clock only restarted when either of these buttons were clicked.
 
 - Another main blocker I had was linking the sounds effects to a specific target and to only play when that target is clicked. I was able to over come this by creating an array with all the target images in, with this, linking each audio file to each target within the array. Now certain sound effects will only play when a certain target has been clicked on.
+
+### Wins
+My biggest wins with this were learning how to animate each "target" (div) to move around the page independently and randomly, choosing from a number of different "keyframes " and also generating a random duration to move across the screen.
+
+My other big win was getting the "targets" (div) to disappear for one second only, then reappearing on the screen. This gave me the ability to make it appear as if once the "targets" (divs) are "shot" or hit they disappear like at the old fashioned carnival "duck shooting" games.
 
 ### Future Features
 
